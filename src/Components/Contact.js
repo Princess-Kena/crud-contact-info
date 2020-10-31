@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Card, Col, Container, Row, Button, Modal } from 'react-bootstrap';
+import { Card, Col,  Button, Modal } from 'react-bootstrap';
 import EditContactForm from './EditContactForm';
 
 
