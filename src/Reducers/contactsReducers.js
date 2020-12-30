@@ -1,15 +1,39 @@
 const initialState ={
-    users:[
-        {name: "Anita", email:"ann@gmail.comm", gen: "23", address:"kasoa"},
-        {name: "Paa", email:"paa@gmail.comm", gen: "15", address:"dome"},
-        {name: "Danny", email:"danny@gmail.comm", gen: "7", address:"fise"}
-
-  ],
+    users: [
+        {
+          name: "Michael Ackortia",
+          number: "0243000000",
+          address: "Awoshie-Accra",
+          type :"Friend",
+          id: "ggnikt668"
+        },
+        {
+          name: "Princess Kena",
+          number: "0551567537",
+          address: "Kasoa-Accra",
+          type: "Family",
+          id: "bdhfj4i75"
+        },
+        {
+          name: "Rose Issakah",
+         number: "0557566267",
+         address: "Akotsi-C/R",
+          type: "Classmate",
+          id: "rgfmhfu68,"
+        },
+        {
+          name: "Keziah Obiri",
+          number: "0248345631",
+          address: "Tafo-E/R",
+          type:"Cousin",
+          id: "ghyegn364587"
+        },
+      ]
 };
 const contactsReducers =(state =initialState, action ) =>{
 switch (action.type) {
     case "ADD_CONTACT":
-        return state;
+        return {...state, users: [...state.users,action.payload]};
 
     default:
         return state;
