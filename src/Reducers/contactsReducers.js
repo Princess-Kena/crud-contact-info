@@ -35,8 +35,18 @@ switch (action.type) {
     case "ADD_CONTACT":
         return {...state, users: [...state.users,action.payload]};
 
-    default:
-        return state;
+        case "DELETE_USER":
+   const filteredUsers = state.users.filter(user =>user.id !==action.payload);
+   return {...state, users: filteredUsers}
+    
+        case "EDIT_USER":
+          return {...state, users: state.users.map((user) =>
+           user.id === action.payload.id ?action.payload  : user
+        ),}
+           default:
+              return state;
+        
+       
 }    
     
 };

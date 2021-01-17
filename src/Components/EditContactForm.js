@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Form, Button} from 'react-bootstrap'; 
+import {connect} from 'react-redux';
+import {editUser} from '../actions/contactsActions'
 
 class EditContactForm extends Component {
     constructor(props){
@@ -22,7 +24,7 @@ class EditContactForm extends Component {
     };
     handleSubmit =(e) =>{
         e.preventDefault();
-        this.props.editUser(this.state.id, this.state);
+        this.props.updatedUser(this.state.id, this.state);
         this.setState({
             name: "",
             number: "",
@@ -70,6 +72,9 @@ class EditContactForm extends Component {
         );
     }
 }
+const mapDispatchToProps ={
+    updatedUser: editUser
+}
 
-export default EditContactForm;
+export default connect(null, mapDispatchToProps) (EditContactForm);
 

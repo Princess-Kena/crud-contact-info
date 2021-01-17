@@ -13,7 +13,7 @@ class App extends Component {
       users: [...this.state.users, user]
     })
   }*/
-  deleteUser = (id) => {
+ /* deleteUser = (id) => {
     let undeletedUsers = this.state.users.filter(user => user.id !== id);
     this.setState({
       users: undeletedUsers
@@ -23,7 +23,7 @@ class App extends Component {
     this.setState({
       users: this.state.users.map(user => user.id === id ? updatedUser : user)
     })
-  }
+  }*/
   render() {
     return (
       <>
