@@ -24,7 +24,7 @@ class EditContactForm extends Component {
     };
     handleSubmit =(e) =>{
         e.preventDefault();
-        this.props.updatedUser(this.state.id, this.state);
+        this.props.updateUser(this.state);
         this.setState({
             name: "",
             number: "",
@@ -73,7 +73,8 @@ class EditContactForm extends Component {
     }
 }
 const mapDispatchToProps ={
-    updatedUser: editUser
+    updateUser: editUser
+    
 }
 
 export default connect(null, mapDispatchToProps) (EditContactForm);
